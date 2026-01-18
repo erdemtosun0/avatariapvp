@@ -119,7 +119,11 @@ async def appconfig(request):
 
 @routes.get("/crossdomain.xml")
 async def crossdomain(requst):
-    return web.Response(text=xml)
+    return web.Response(
+    text=xml,
+    content_type="text/xml"
+    )
+
 
 
 async def main():
